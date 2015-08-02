@@ -14,10 +14,11 @@ static NSMutableArray *metaDataRevArray;
 
 @protocol DBModelDelegate <NSObject>
 
-- (void ) metadataReturnedWithValues:(DBMetadata *)metadata withRevArray:(NSMutableArray *)revArray;
-- (void) fileDeletedAtPath:(NSString *)path;
+- (void)metadataReturnedWithValues:(DBMetadata *)metadata withRevArray:(NSMutableArray *)revArray;
+- (void)fileDeletedAtPath:(NSString *)path;
 - (void)fileUploadedSuccesfullyToPath:(NSString *)path;
 - (void)fileLoadedWithContent:(NSString *)content;
+- (void)sendErrorMessageWithString:(NSString *)errorString;
 
 @end
 

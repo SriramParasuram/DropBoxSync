@@ -64,7 +64,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBSync/DetailViewController.m"
@@ -74,22 +74,6 @@
             startingLineNumber = "112"
             endingLineNumber = "112"
             landmarkName = "-saveToDropBoxWithText:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DBSync/DetailViewController.m"
-            timestampString = "460241936.541335"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "-metadataReturnedWithValues:withRevArray:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,6 +90,22 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "-readContentsInDropBoxForPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBSync/DBModel.m"
+            timestampString = "460244662.176714"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-restClient:deletePathFailedWithError:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

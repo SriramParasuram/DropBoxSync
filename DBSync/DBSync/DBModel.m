@@ -81,7 +81,7 @@
         }
     }
     
-    NSLog(@"parent rev array %@",self.metaDataRevArray);
+    
     [self.dbModelDelegate metadataReturnedWithValues:metadata withRevArray:self.metaDataRevArray];
 
     
@@ -99,14 +99,14 @@
 - (void)restClient:(DBRestClient *)client deletedPath:(NSString *)path
 {
     
-    NSLog(@"reached model delete");
+    
     [self.dbModelDelegate fileDeletedAtPath:path];
 }
 
 
 - (void)restClient:(DBRestClient *)client deletePathFailedWithError:(NSError *)error
 {
-    
+    [self.dbModelDelegate sendErrorMessageWithString:@"Unable to delete file at this time. Please try again later."];
 }
 
 

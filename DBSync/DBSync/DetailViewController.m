@@ -57,7 +57,7 @@
     [self readContents];
     self.view.hidden = NO;
     if(self.fileNameToBeRead.length>0)
-    [self loadContentsForFileName:self.fileNameToBeRead];
+        [self loadContentsForFileName:self.fileNameToBeRead];
     
     else
         self.detailView.detailTextView.text = @"";
@@ -104,33 +104,37 @@
 
 - (void)saveToDropBoxWithText:(NSString *)text
 {
+
     
-    NSLog(@"rev array is %@",self.revArray);
-    NSLog(@"sss %@",[self.revArray objectAtIndex:self.indexPathToBeRead.row]);
-
-
+    
     if(text.length>0)
     {
-    NSString *fileName;
-    if(text.length<5)
-    {
-        fileName = text;
-    }
-    
-    else
-    {
-        fileName = [text substringToIndex:5];
-    }
-    
+        NSString *fileName;
+        if(text.length<5)
+        {
+            fileName = text;
+        }
         
-    //NSString *filename = [text substringToIndex:5];
-    NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *localPath = [localDir stringByAppendingPathComponent:fileName];
-    [text writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    NSString *destDir = @"/";
-        NSLog(@"working?? %@",[self.revArray objectAtIndex:self.indexPathToBeRead.row]);
+        else
+        {
+            fileName = [text substringToIndex:5];
+        }
         
-    [self.dbModel uploadFile:fileName FromPath:localPath toPath:destDir WithParentRev:[self.revArray objectAtIndex:self.indexPathToBeRead.row]];
+        
+        
+        NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        NSString *localPath = [localDir stringByAppendingPathComponent:fileName];
+        [text writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        NSString *destDir = @"/";
+        
+        if(self.revArray.count == 0)
+        {
+            [self.dbModel uploadFile:fileName FromPath:localPath toPath:destDir WithParentRev:nil];
+        }
+        else
+        {
+            [self.dbModel uploadFile:fileName FromPath:localPath toPath:destDir WithParentRev:[self.revArray objectAtIndex:self.indexPathToBeRead.row]];
+        }
     }
     
     else
@@ -139,7 +143,7 @@
         [alert show];
         [self.detailView.detailTextView resignFirstResponder];
     }
-
+    
 }
 
 
@@ -193,11 +197,10 @@
 
 - (void)metadataReturnedWithValues:(DBMetadata *)metadata withRevArray:(NSMutableArray *)revArray
 {
-    NSLog(@"rev array %@",revArray);
+    
     self.revArray = revArray;
     
 }
-
 
 
 

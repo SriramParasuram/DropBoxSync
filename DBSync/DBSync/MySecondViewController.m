@@ -259,6 +259,12 @@
     
 }
 
+- (void)sendErrorMessageWithString:(NSString *)errorString
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"DropBox" message:errorString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 
+    
+}
 
 @end

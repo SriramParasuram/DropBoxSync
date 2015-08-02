@@ -123,9 +123,8 @@
     if ([[DBSession sharedSession] handleOpenURL:url]) {
         if ([[DBSession sharedSession] isLinked]) {
             
-            NSLog(@"myfirstVC %@",self.myFirstVC);
-            NSLog(@"aaa %@",self.myFirstVC.mySecondVC);
-            NSLog(@"please!! %@",self.navigationController);
+
+            
             
             [self.navigationController pushViewController:self.myFirstVC.mySecondVC animated:YES];
 
