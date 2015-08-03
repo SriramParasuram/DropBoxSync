@@ -14,7 +14,7 @@
 #define iOS7orAbove ( [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define iOS8orAbove ( [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-@interface MySecondViewController ()<DBRestClientDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,MySecondViewDelegate,DBModelDelegate,DBRestClientDelegate>
+@interface MySecondViewController ()<DBRestClientDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,MySecondViewDelegate,DBModelDelegate,DBRestClientDelegate,UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *views;
 @property (nonatomic, strong) DBRestClient *restClient;
@@ -170,7 +170,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [self.dbModel deleteFileInDropBoxAtIndexInTable:indexPath];
+    UIAlertView *confirmationAlertView = [[UIAlertView alloc]initWithTitle:@"DropBox" message:@"Are you sure that you want to delete this entry?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    confirmationAlertView.delegate = self;
+    [confirmationAlertView show];
+    self.indexPathToBeDeleted = indexPath;
+    
     
     
 }
@@ -266,5 +270,36 @@
 
     
 }
+
+
+#pragma mark AlertView delegate methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    NSLog(@"index is %d",buttonIndex);
+    if(buttonIndex == 1)
+    {
+        [self.dbModel deleteFileInDropBoxAtIndexInTable:self.indexPathToBeDeleted];
+        
+    }
+    
+    else
+        
+    {
+        self.indexPathToBeDeleted = nil;
+        [self.mySecondView.detailTableView reloadData];
+        
+        
+
+    }
+    
+
+    
+    
+    
+}
+
+
 
 @end

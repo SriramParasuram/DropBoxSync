@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) NSMutableArray *metaDataFileNameArray;
 
+@property NSIndexPath *indexPathToBeDeleted;
+
 @end
