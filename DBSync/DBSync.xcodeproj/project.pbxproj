@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807364FE1B74A717004365E6 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807364FD1B74A717004365E6 /* DropboxSDK.framework */; };
 		80E719E61B6EAB0D00AC5B29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E719E51B6EAB0D00AC5B29 /* main.m */; };
 		80E71A001B6EAB0D00AC5B29 /* DBSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E719FF1B6EAB0D00AC5B29 /* DBSyncTests.m */; };
 		80E71A0A1B6EAB7500AC5B29 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E71A091B6EAB7500AC5B29 /* Security.framework */; };
@@ -21,7 +22,6 @@
 		80E71A281B6EACC900AC5B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E71A251B6EACC900AC5B29 /* Main.storyboard */; };
 		80E71A291B6EACC900AC5B29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80E71A261B6EACC900AC5B29 /* Images.xcassets */; };
 		80E71A2A1B6EACC900AC5B29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E71A271B6EACC900AC5B29 /* LaunchScreen.xib */; };
-		80E71A2B1B6F613C00AC5B29 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E71A0B1B6EAB8100AC5B29 /* DropboxSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		807364FD1B74A717004365E6 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		80E719E01B6EAB0D00AC5B29 /* DBSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80E719E41B6EAB0D00AC5B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80E719E51B6EAB0D00AC5B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		80E719FE1B6EAB0D00AC5B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80E719FF1B6EAB0D00AC5B29 /* DBSyncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBSyncTests.m; sourceTree = "<group>"; };
 		80E71A091B6EAB7500AC5B29 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		80E71A0B1B6EAB8100AC5B29 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "../../../../Downloads/dropbox-ios-sdk-1.3.13 5/DropboxSDK.framework"; sourceTree = "<group>"; };
 		80E71A0D1B6EAC2C00AC5B29 /* DBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBModel.h; sourceTree = "<group>"; };
 		80E71A0E1B6EAC2C00AC5B29 /* DBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBModel.m; sourceTree = "<group>"; };
 		80E71A0F1B6EAC2C00AC5B29 /* MyFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFirstView.h; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E71A2B1B6F613C00AC5B29 /* DropboxSDK.framework in Frameworks */,
+				807364FE1B74A717004365E6 /* DropboxSDK.framework in Frameworks */,
 				80E71A0A1B6EAB7500AC5B29 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +87,7 @@
 		80E719D71B6EAB0D00AC5B29 = {
 			isa = PBXGroup;
 			children = (
-				80E71A0B1B6EAB8100AC5B29 /* DropboxSDK.framework */,
+				807364FD1B74A717004365E6 /* DropboxSDK.framework */,
 				80E71A091B6EAB7500AC5B29 /* Security.framework */,
 				80E719E21B6EAB0D00AC5B29 /* DBSync */,
 				80E719FC1B6EAB0D00AC5B29 /* DBSyncTests */,
@@ -380,6 +380,7 @@
 					5,
 					"/Users/Sriram/Downloads/dropbox-ios-sdk-1.3.13",
 					5,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DBSync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -398,6 +399,7 @@
 					5,
 					"/Users/Sriram/Downloads/dropbox-ios-sdk-1.3.13",
 					5,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DBSync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
